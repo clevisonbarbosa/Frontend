@@ -21,3 +21,7 @@ Run ng build to build the project. The build artifacts will be stored in the dis
 ## windows
 
 The application was created using windows, so if you use linux or mac, there may be errors.
+
+## Demo
+
+![screen-capture](https://user-images.githubusercontent.com/50533700/150539741-fffd8847-1d8e-47fe-b2bf-b137727f756f.gif)
