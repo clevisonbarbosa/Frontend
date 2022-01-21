@@ -1,0 +1,63 @@
+<div class="container center-block">
+  <h1 class="mx-auto mb-4 mt-2" style="width: 400px;">Cadastrar Usuários</h1>
+
+  <form>
+    <div class="form-group mt-2">
+      <label for="nome">Nome :</label>
+      <input type="text" name="nome" [(ngModel)]="usuario.nome" class="form-control">
+    </div>
+
+    <div class="form-group mt-2">
+      <label for="email">Email :</label>
+      <input type="email" name="email" [(ngModel)]="usuario.email" class="form-control">
+    </div>
+
+    <div class="form-group mt-2">
+      <label for="idade">Idade :</label>
+      <input type="number" name="idade" [(ngModel)]="usuario.idade" class="form-control">
+    </div>
+
+    <div class="form-group mt-2 mb-4">
+    <label for="telefone">Telefone :</label>
+    <input type="tel" name="telefone" [(ngModel)]="usuario.telefone" class="form-control">
+    </div>  
+
+    <div class="form-group mb-4"> 
+      <label for="sexo">Sexo&nbsp;</label>
+        <input type="radio" name="sexo" value="M" [(ngModel)]="usuario.sexo"> M
+        <input type="radio" name="sexo" value="F" [(ngModel)]="usuario.sexo"> F
+    </div>     
+
+    <button type="button" class="btn btn-success" (click)="cadastrar()">Cadastrar</button>
+  </form>
+
+<hr class="my-4">
+<h1 class="mx-auto mb-4" style="width: 400px;">Usuários Cadastrados</h1>
+<table class="table table-striped text-center table-light table-hover">
+  <thead>
+    <tr>
+      <th scope="col">#ID</th>
+      <th scope="col">Nome</th>
+      <th scope="col">Email</th>
+      <th scope="col">Idade</th>
+      <th scope="col">Telefone</th>
+      <th scope="col">Sexo</th>
+      <th scope="col">Ações</th>
+    </tr>
+  </thead>
+
+  <tbody>
+    <tr *ngFor="let usuario of usuarios">
+      <td>{{usuario.id}}</td>
+      <td>{{usuario.nome}}</td>
+      <td>{{usuario.email}}</td>
+      <td>{{usuario.idade}}</td>
+      <td>{{usuario.telefone}}</td>
+      <td>{{usuario.sexo}}</td>
+      <td><button class="btn btn-success mx-2" (click)="atualizar(usuario.id)">Atualizar</button>
+        <button class="btn btn-danger" (click)="remover(usuario.id)">Remover</button></td>
+    </tr>
+  </tbody>
+</table>
+
+</div>
